@@ -1,0 +1,2 @@
+class Tododatum < ApplicationRecord
+end
