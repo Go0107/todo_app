@@ -1,0 +1,27 @@
+
+<div class="container">
+  <h1>Todo List</h1>
+
+  <a class="new-task" href="/todos/new">タスクを追加する</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>タスク</th>
+        <th>アクション</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ここは後から動的コンテンツに置き換える -->
+      <tr>
+        <% @todos.each do |todo| %>
+          <td><%= todo.title %></td>
+          <td>
+            <%= link_to("編集", "/todos/#{todo.id}/edit", class: "edit") %>
+            <%= link_to "削除", "/todos/#{todo.id}", method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "delete" %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
