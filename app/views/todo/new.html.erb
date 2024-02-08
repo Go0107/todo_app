@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>タスクの追加</h1>
+  <% @todo.errors.full_messages.each do |message| %>
+    <div class="form-error">
+      <%= message %>
+    </div>
+  <% end %>
+  <%= form_tag("/todos/create") do %>
+    <%= render 'layouts/form' %>
+  <% end %>
+</div>
