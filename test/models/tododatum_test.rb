@@ -1,7 +1,18 @@
 require "test_helper"
 
 class TododatumTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  def setup
+    @todo = Tododatum.new(title: "寝る")
+  end
+
+  test "title should be present true" do
+    @todo.title = "a"
+    assert @todo.valid?
+  end
+
+  test "title should be present false" do
+    @todo.title = ""
+    assert_not @todo.valid?
+  end
 end
